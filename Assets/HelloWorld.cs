@@ -7,12 +7,14 @@ public class HelloWorld : MonoBehaviour {
 	public bool turnOn = true;
 	public float posX = 5.0f;
 	public int intTest = 5;
-	public string[] names;
+	string[] names = new string[]{"Jesse", "Freeman"};
 
 	// Use this for initialization
 	void Start () {
-		text = Test("Calling Test()"); //"Updated during start()";
-		print("hello world");
+		// names [0] = "Jesse";
+		// text = Test("Calling Test()"); //"Updated during start()";
+		print("First name " + names[0]);
+		print("Total names " + names.Length);
 	}
 
 	// Update is called once per frame
