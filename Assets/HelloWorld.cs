@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HelloWorld : MonoBehaviour {
 
@@ -8,13 +9,24 @@ public class HelloWorld : MonoBehaviour {
 	public float posX = 5.0f;
 	public int intTest = 5;
 	string[] names = new string[]{"Jesse", "Freeman"};
+	List<string> animals = new List<string>(){"dog", "cat"};
 
 	// Use this for initialization
 	void Start () {
+		animals.Add ("fish");
+		animals.Add ("bird");
+
+		animals.Remove ("bird");
+
+		print ("List to Array length " + animals.ToArray().Length);
 		// names [0] = "Jesse";
 		// text = Test("Calling Test()"); //"Updated during start()";
-		print("First name " + names[0]);
-		print("Total names " + names.Length);
+		print ("First name " + names[0]);
+		print ("Total names " + names.Length);
+
+		print ("Total animals " + animals.Count);
+		print ("Animal 1 " + animals[0]);
+		print ("Last animal 1 " + animals[animals.Count-1]);
 	}
 
 	// Update is called once per frame
