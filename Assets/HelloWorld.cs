@@ -31,11 +31,13 @@ public class HelloWorld : MonoBehaviour {
 		// print ("Last animal 1 " + animals[animals.Count-1]);
 		//
 		weapons.Add("slot1", "sword");
+		weapons.Add("slot2", "dagger");
 		//
 		// print ("Weapon in slot 1 " + weapons["slot1"]);
 		// print ("Slot 2 equiped " + weapons.ContainsKey("slot2"));
 
-		ConditionTest ();
+		// ConditionTest ();
+		LoopTest();
 	}
 
 	// Update is called once per frame
@@ -59,10 +61,40 @@ public class HelloWorld : MonoBehaviour {
 			print ("Name is not Jesse");
 		}
 
-		int health = 5;
+		int health = 0;
 
-		if (health < 0) {
+		bool isDead = health <= 0;
+
+		print ("is dead " + isDead);
+
+		if (isDead)
 			print ("Player is dead");
+
+		string mode = isDead == true ? "Game over" : "Is Playing";
+
+		print ("Game Mode " + mode);
+	}
+
+	void LoopTest(){
+
+		for (int i = 0; i < 10; i ++) {
+			print ("Loop " + i);
+		}
+
+		for (int i = 10; i > 0; i --) {
+			print ("Loop " + i);
+		}
+
+		for (int i = 0; i < names.Length; i++){
+			print ("Name " + i + " " + names [i]);
+		}
+
+		foreach(string name in animals){
+			print (name);
+		}
+
+		foreach (var item in weapons) {
+			print (item.Key + " " + item.Value);
 		}
 	}
 }
