@@ -15,6 +15,13 @@ public class HelloWorld : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		CustomClass cc = new CustomClass ();
+
+		print (cc.health + "/" + cc.maxHealth);
+
+		print ("Health " + cc.CurrentHealthPercent() + "%");
+
 		animals.Add ("fish");
 		animals.Add ("bird");
 
@@ -37,7 +44,7 @@ public class HelloWorld : MonoBehaviour {
 		// print ("Slot 2 equiped " + weapons.ContainsKey("slot2"));
 
 		// ConditionTest ();
-		LoopTest();
+		// LoopTest();
 	}
 
 	// Update is called once per frame
