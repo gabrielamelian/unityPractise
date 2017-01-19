@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using MyGame;
 
 public class HelloWorld : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class HelloWorld : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		CustomClass cc = new CustomClass ();
+		Player cc = new Player ();
 
 		print (cc.health + "/" + cc.maxHealth);
 
