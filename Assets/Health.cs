@@ -1,9 +1,21 @@
 namespace MyGame {
 
-	public class Health {
+    public interface IHealth {
+        int health{ get; set; }
+        int maxHealth{ get; set; }
+        float CurrentHealthPercent();
+        void RestoreHealth();
+    }
 
-		public int health = 5;
-		public int maxHealth = 10;
+	public class Health : IHealth {
+
+		public int health { get; set; }
+		public int maxHealth { get; set; }
+
+        public Health(){
+            health = 5;
+            maxHealth = 10;
+        }
 
 		public float CurrentHealthPercent(){
 			return (health / (float)maxHealth) * 100;
